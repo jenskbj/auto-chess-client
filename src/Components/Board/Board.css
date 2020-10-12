@@ -7,6 +7,13 @@ td {
     width: 70px;
     height: 70px;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
 
 table {
@@ -27,11 +34,11 @@ table {
 }
 
 .sqr-dark {
-    background-color: black;
+    background-color: darkgreen;
     color: white;
 }
 
 .sqr-light {
-    background-color: white;
+    background-color: lightgreen;
     color: black;
 }

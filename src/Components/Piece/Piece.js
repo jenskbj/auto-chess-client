@@ -3,7 +3,7 @@ import './Piece.css';
 
 function Piece(props) {
     return(
-        <span>{props.text}</span>
+        <img alt="" src={props.img}></img>
     )
 }
 
