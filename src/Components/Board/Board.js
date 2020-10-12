@@ -15,6 +15,23 @@ function Board(props) {
         ["bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"]  // 8
     ]
 
+    function prettyPrintBoard() {
+        console.log("+------+------+------+------+------+------+------+------+");
+
+        for(let i = boardArr.length-1; i >= 0; i--) {
+            let rowStr = "|";
+
+            for(let j = 0; j < boardArr[i].length; j++) {
+                rowStr += "  " + boardArr[i][j] + "  |";
+            }
+
+            console.log(rowStr);
+            console.log("+------+------+------+------+------+------+------+------+");
+        }
+    }
+
+    prettyPrintBoard();
+
     const board = boardArr.map((row, i) => {
         const columns = row.map((col, j) => {
             return(
