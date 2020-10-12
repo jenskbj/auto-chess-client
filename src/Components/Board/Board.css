@@ -1,44 +1,5 @@
-html, body {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-td {
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
 table {
     border: 3px solid black;
     border-spacing: 0;
-    font-family: calibri;
-    font-weight: bold;
-    font-size: 2.5em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scaleY(-1);
     user-select: none;
-}
-
-.sqr {
-    transform: scaleY(-1);
-}
-
-.sqr-dark {
-    background-color: darkgreen;
-    color: white;
-}
-
-.sqr-light {
-    background-color: lightgreen;
-    color: black;
 }
