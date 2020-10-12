@@ -1,0 +1,45 @@
+button {
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#btn-reset {
+    margin-top: 700px;
+}
+
+.flipped-y {
+    transform: scaleY(-1);
+}
+
+.flipped-x {
+    transform: scaleX(-1);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centered.flipped-y {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(-1);
+}
+
+.centered.flipped-x {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
+}
+
+.centered.flipped-y.flipped-x {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(-1) scaleX(-1);
+}

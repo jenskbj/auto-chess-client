@@ -1,0 +1,16 @@
+.sqr {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+.sqr-dark {
+    background-color: darkgreen;
+    color: white;
+}
+
+.sqr-light {
+    background-color: lightgreen;
+    color: black;
+}

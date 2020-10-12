@@ -3,7 +3,7 @@ import './Piece.css';
 
 function Piece(props) {
     return(
-        <img alt="" src={props.img}></img>
+        <img className={"centered"} alt={""} src={props.img}></img>
     )
 }
 
