@@ -1,6 +1,9 @@
 button {
     display: block;
     margin: auto;
+}
+
+#btn-flip {
     margin-top: 100px;
 }
 
