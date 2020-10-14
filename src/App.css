@@ -1,11 +1,9 @@
 button {
-    display: block;
-    margin: auto;
-    margin-top: 100px;
+    position: fixed;
 }
 
-#btn-reset {
-    margin-top: 700px;
+#btn-flip {
+    top: 15px;
 }
 
 .flipped-y {

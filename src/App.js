@@ -3,8 +3,8 @@ import './App.css';
 import Board from './Components/Board/Board';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             flipped: true
@@ -16,16 +16,11 @@ class App extends React.Component {
             flipped: !state.flipped
         }));
 
-    resetBoard() {
-        console.log("Board reset.")
-    }
-
     render() {
         return (
             <>
-                <button id="btn-flip" onClick={this.flipBoard}>Flip board</button>
                 <Board flipped={this.state.flipped} />
-                <button id="btn-reset" onClick={this.resetBoard}>Reset board</button>
+                <button className={"centered"} id="btn-flip" onClick={this.flipBoard}>Flip board</button>
             </>
         );
     }

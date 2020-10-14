@@ -3,7 +3,12 @@ import './Piece.css';
 
 function Piece(props) {
     return(
-        <img className={"centered"} alt={""} src={props.img}></img>
+        <img
+            onDragStart={(ev) => ev.preventDefault()}
+            className={"centered"}
+            alt={""}
+            src={props.img}>
+        </img>
     )
 }
 
