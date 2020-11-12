@@ -21,7 +21,10 @@ function Board(props) {
     const getBoardCoord = (i, j) => `${String.fromCharCode(97 + j)}${i + 1}`;
 
     function isLegalMove(destRow, destCol) {
-        return true; // TODO
+        let sourceColor = board[sourceRow][sourceCol][0];
+        let destColor = board[destRow][destCol][0];
+
+        return sourceColor !== destColor
     }
 
     function getMoveNotation(destRow, destCol) {
