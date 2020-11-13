@@ -1,10 +1,14 @@
-import React , { useState } from 'react';
+import React , { useState, FunctionComponent } from 'react';
 import './Board.css';
 import Square from '../Square/Square';
 
-function Board(props) {
-    const [sourceRow, setSourceRow] = useState(null);
-    const [sourceCol, setSourceCol] = useState(null);
+type Props = {
+    flipped: boolean
+}
+
+const Board: FunctionComponent<Props> = ({ flipped }: Props) => {
+    const [sourceRow, setSourceRow] = useState(-1);
+    const [sourceCol, setSourceCol] = useState(-1);
     const [board, setBoard] = useState([
         //A     B     C     D     E     F     G     H
         ["wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"], // 1
@@ -18,13 +22,13 @@ function Board(props) {
     ]);
 
     // Given 0-based row and column numbers, returns the board coordinate. (0, 0) => "a1", (2, 6) => "c7" etc.
-    const getBoardCoord = (i, j) => `${String.fromCharCode(97 + j)}${i + 1}`;
+    const getBoardCoord = (i: number, j: number) => `${String.fromCharCode(97 + j)}${i + 1}`;
 
-    function isLegalMove(destRow, destCol) {
+    function isLegalMove(destRow: number, destCol: number) {
         return true; // TODO
     }
 
-    function getMoveNotation(destRow, destCol) {
+    function getMoveNotation(destRow: number, destCol: number) {
         // Add piece prefix
         // check if rank/file needs to be specified (if multiple pieces can reach same sqr)
         // Add 'x' if square was occupied from before
@@ -41,7 +45,7 @@ function Board(props) {
         return `${board[sourceRow][sourceCol][1]}${getBoardCoord(sourceRow, sourceCol)}${getBoardCoord(destRow, destCol)}`;
     }
 
-    function tryMakeMove(destRow, destCol) {        
+    function tryMakeMove(destRow: number, destCol: number) {        
         if(isLegalMove(destRow, destCol)) {
             console.log(getMoveNotation(destRow, destCol));
             
@@ -54,12 +58,12 @@ function Board(props) {
             setBoard(updatedBoard);
             
             // Reset source coords
-            setSourceCol(null);
-            setSourceRow(null);
+            setSourceCol(-1);
+            setSourceRow(-1);
         }
     }
 
-    function updateSourceSquare(rowNum, colNum) {
+    function updateSourceSquare(rowNum: number, colNum: number) {
         setSourceRow(rowNum);
         setSourceCol(colNum);
     }
@@ -67,7 +71,7 @@ function Board(props) {
     const squares = board.map((row, i) => {
         const columns = row.map((col, j) =>
             <Square
-                flipped={props.flipped}
+                flipped={flipped}
                 key={getBoardCoord(i, j)}
                 rowNum={i}
                 colNum={j}
@@ -81,7 +85,7 @@ function Board(props) {
     });
 
     return(
-        <table className={"centered" + (props.flipped ? " flipped-y" : " flipped-x")}>
+        <table className={"centered" + (flipped ? " flipped-y" : " flipped-x")}>
             <tbody>
                 {squares}
             </tbody>

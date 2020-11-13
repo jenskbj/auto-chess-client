@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import './Piece.css';
 
-function Piece(props) {
+type Props = {
+    img: any
+}
+
+const Piece: FunctionComponent<Props> = ({ img }: Props) => {
     return(
         <img
             onDragStart={(ev) => ev.preventDefault()}
             className={"centered"}
             alt={""}
-            src={props.img}>
+            src={img}>
         </img>
     )
 }

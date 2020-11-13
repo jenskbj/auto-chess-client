@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Board from './Components/Board/Board';
 
-class App extends React.Component {
-    constructor() {
-        super();
+type State = {
+    flipped: boolean
+}
+
+class App extends Component<{}, State> {
+    constructor(props: {}) {
+        super(props);
 
         this.state = {
             flipped: true
